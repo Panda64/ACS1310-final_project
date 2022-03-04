@@ -22,12 +22,16 @@ function Name() {
   }
 
   return (
-    <div className="Name">
-        <Form onSubmit={handleSubmit} className="name_form">
-            <Form.Label htmlFor="name">Name</Form.Label>
-            <Form.Control type="text" name="name" onChange={handleChange}/>
-            <Button variant="dark" type="submit" disabled={name.length < 1}>Submit</Button>
-        </Form>
+      
+    <div className="NameMain">
+        <h1 className="NameTitle">Jaylen's Travel Tracker</h1>
+        <div className="NameFormWrapper">
+            <Form onSubmit={handleSubmit} className="name_form">
+                <Form.Label htmlFor="name">Your Name</Form.Label>
+                <Form.Control type="text" name="name" onChange={handleChange}/>
+                <Button variant="dark" type="submit" disabled={name.length < 1}>Submit</Button>
+            </Form>
+        </div>
     </div>
   )
 }
