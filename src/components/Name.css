@@ -1,0 +1,18 @@
+.Name {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -100px;
+}
+
+#name_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#name_form > * {
+    margin-bottom: 10px;
+}
+
