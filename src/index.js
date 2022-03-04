@@ -4,13 +4,14 @@ import './index.css';
 import App from './App';
 import Name from './components/Name';
 import reportWebVitals from './reportWebVitals';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 
 ReactDOM.render(
   <Router>
     <Routes>
       <Route path="/" element={<Name />} />
       <Route path="/map" element={<App />} />
+      <Route path="/*" element={<Navigate replace to="/" />} />
     </Routes>
   </Router>,
   document.getElementById('root')

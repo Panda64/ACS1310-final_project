@@ -5,9 +5,9 @@ function Name() {
 
   let navigate = useNavigate()
 
-  async function handleSubmit(e){
+  function handleSubmit(e){
     e.preventDefault();
-    navigate('/map', { state: { name: e.target.name.value } });
+    navigate('/map', { state: { name: e.target.name.value } })
 
   }
 

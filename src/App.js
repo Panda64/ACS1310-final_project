@@ -1,4 +1,4 @@
-import { Outlet, useLocation } from 'react-router-dom'
+import { Outlet, useLocation, Navigate } from 'react-router-dom'
 
 import './App.css';
 import Title from './components/Title';
@@ -6,10 +6,16 @@ import Title from './components/Title';
 function App() {
   const location = useLocation()
   return (
-    <div>
-      <Title name={location.state.name} />
-      <Outlet />
-    </div>
+    <>
+    {location.state ? 
+      <div>
+        <Title name={location.state.name} />
+        <Outlet />
+      </div>
+      : 
+      <Navigate to="/" />
+    }
+    </>
   );
 }
 
