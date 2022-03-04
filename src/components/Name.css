@@ -6,13 +6,13 @@
     margin-left: -100px;
 }
 
-#name_form {
+.name_form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#name_form > * {
+.name_form > * {
     margin-bottom: 10px;
 }
 

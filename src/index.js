@@ -5,6 +5,7 @@ import App from './App';
 import Name from './components/Name';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 ReactDOM.render(
   <Router>
