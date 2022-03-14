@@ -2,11 +2,10 @@ import './Stats.css';
 import data from '../country_data.json';
 import LandArea from "./LandArea";
 
-function Stats(props) {
-  var result = data.find(t=>t.cca2 ==='AW').area;
+function Stats({ mapState }) {
     return (
     <div className="Stats">
-      <LandArea mapState={props.mapState} data={data} />
+      <LandArea mapState={mapState} data={data} />
     </div>
   )
 }

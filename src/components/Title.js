@@ -1,7 +1,6 @@
 import './Title.css';
 
-function Title(props) {
-  const { name } = props;
+function Title({ name }) {
   return (
     <div className="Title">
       <header>

@@ -1,32 +1,23 @@
-import {
-    CircularProgressbar,
-    buildStyles
-  } from "react-circular-progressbar";
   import React, { useState } from 'react'
-  import { easeQuadInOut } from "d3-ease";
-  import AnimatedProgressProvider from "./AnimatedProgressProvider";
-  import "react-circular-progressbar/dist/styles.css";
+  import AnimatedCircularProgress from './AnimatedCircularProgress'
 
   const TOTAL_AREA = 148940000.0
   let current_area = 0
   let prev_country = ''
   let prev_selected = false
   
-  function LandArea(props) {
+  function LandArea({ mapState, data }) {
     const [valueEnd, setValueEnd] = useState(0);
-    console.log(props.mapState)
 
     function calculatePercentage() {
-        prev_country = props.mapState.countryCode
-        prev_selected = props.mapState.isSelected
+        prev_country = mapState.countryCode
+        prev_selected = mapState.isSelected
 
-        if (props.mapState.isSelected) {
-            current_area += props.data.find(i=>i.cca2 === props.mapState.countryCode).area
+        if (mapState.isSelected) {
+            current_area += data.find(i=>i.cca2 === mapState.countryCode).area
         } else {  
-            current_area -= props.data.find(i=>i.cca2 === props.mapState.countryCode).area
+            current_area -= data.find(i=>i.cca2 === mapState.countryCode).area
         }
-
-        console.log(current_area)
     
         if (current_area > 0) {
             setValueEnd(current_area / TOTAL_AREA * 100)
@@ -35,32 +26,13 @@ import {
         }
     }
 
-    if (props.mapState.countryCode !== '' && (props.mapState.countryCode !== prev_country || props.mapState.isSelected !== prev_selected)) {
+    if (mapState.countryCode !== '' && (mapState.countryCode !== prev_country || mapState.isSelected !== prev_selected)) {
         calculatePercentage()
     }
 
     return (
-    <div className="LandArea" style={{ width: 200, height: 200 }}>
-        <AnimatedProgressProvider
-        valueStart={0}
-        valueEnd={valueEnd}
-        duration={1.4}
-        easingFunction={easeQuadInOut}
-        repeat={false}
-        >
-        {value => {
-            const roundedValue = Math.round(value);
-            return (
-            <CircularProgressbar
-                value={value}
-                text={`${roundedValue}%`}
-                styles={buildStyles({ 
-                pathTransition: "none", 
-                })}
-            />
-            );
-        }}
-        </AnimatedProgressProvider>
+    <div className="LandArea">
+        <AnimatedCircularProgress valueEnd={valueEnd} />
     </div>   
     )
   }
