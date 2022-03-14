@@ -4,17 +4,24 @@ import './App.css';
 import Title from './components/Title';
 import Map from './components/Map';
 import Stats from './components/Stats';
+import { useState } from 'react';
 
 function App() {
   const location = useLocation()
+  var [mapState, setMapState] = useState({ countriesArray : [], countryCode : '', isSelected : false })
+
+  function updateCountries(countriesArray, countryCode, isSelected) {
+    setMapState({ countriesArray, countryCode, isSelected })
+  }
+
   return (
     <>
     {location.state ? 
       <div>
         <Title name={location.state.name} />
         <div className="map_and_stats">
-          <Map />
-          <Stats />
+          <Map updateCountries={updateCountries} />
+          <Stats mapState={mapState} />
         </div>
         <Outlet />
       </div>

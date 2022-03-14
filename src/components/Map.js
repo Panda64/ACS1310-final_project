@@ -1,6 +1,6 @@
 import React from "react";
 import { VectorMap } from "@react-jvectormap/core";
-import { worldMill } from "@react-jvectormap/world"
+import { worldMerc } from "@react-jvectormap/world"
 
 import styled from "@emotion/styled";
 import './Map.css';
@@ -8,81 +8,85 @@ import './Map.css';
 const { getName } = require("country-list");
 
 class Map extends React.Component {
-  state = {
-    countriesCodesArray: [],
-    countriesNamesArray: [],
-    data: {},
-    title: "",
-    titleSet: false,
-    color: "#48aeef"
-  };
+  // state = {
+  //   countriesCodesArray: [],
+  //   countriesNamesArray: [],
+  //   data: {},
+  //   title: "",
+  //   titleSet: false,
+  //   color: "#48aeef"
+  // };
 
-  handleColorChange = color => {
-    console.log(color.hex);
-    this.setState({ color: color.hex });
-  };
+  // handleColorChange = color => {
+  //   console.log(color.hex);
+  //   this.setState({ color: color.hex });
+  // };
 
-  handleChange = e => {
-    this.setState({
-      title: e.target.value
-    });
-  };
+  // handleChange = e => {
+  //   this.setState({
+  //     title: e.target.value
+  //   });
+  // };
 
-  handleFormSubmit = () => {
-    this.setState({
-      titleSet: true
-    });
-  };
+  // handleFormSubmit = () => {
+  //   this.setState({
+  //     titleSet: true
+  //   });
+  // };
 
-  handleClick = (e, countryCode) => {
-    const { countriesCodesArray } = this.state;
-    // console.log(countryCode);
-    if (countriesCodesArray.indexOf(countryCode) === -1) {
-      this.setState(
-        {
-          countriesCodesArray: [...countriesCodesArray, countryCode]
-        },
-        () => this.getCountriesNamesList()
-      );
-    }
-  };
+  // handleClick = (e, countryCode) => {
+  //   const { countriesCodesArray } = this.state;
+  //   // console.log(countryCode);
+  //   if (countriesCodesArray.indexOf(countryCode) === -1) {
+  //     this.setState(
+  //       {
+  //         countriesCodesArray: [...countriesCodesArray, countryCode]
+  //       },
+  //       () => this.getCountriesNamesList()
+  //     );
+  //   }
+  // };
 
-  getCountriesNamesList = () => {
-    const { countriesCodesArray } = this.state;
-    const list = countriesCodesArray.map(code => getName(code));
-    this.setState(
-      {
-        countriesNamesArray: list
-      },
-      () => this.makeMapDataStructure()
-    );
-  };
+  handleRegion = (e, code, isSelected, selectedRegions) => {
+    this.props.updateCountries(selectedRegions, code, isSelected);
+  }
 
-  makeMapDataStructure = () => {
-    const { countriesCodesArray } = this.state;
-    let obj = {};
-    //{CN: 5, MX: 5, TX: 5}
-    countriesCodesArray.forEach(countryCode => (obj[countryCode] = 5));
-    this.setState({
-      data: obj
-    });
-  };
+  // getCountriesNamesList = () => {
+  //   const { countriesCodesArray } = this.state;
+  //   const list = countriesCodesArray.map(code => getName(code));
+  //   this.setState(
+  //     {
+  //       countriesNamesArray: list
+  //     },
+  //     () => this.makeMapDataStructure()
+  //   );
+  // };
+
+  // makeMapDataStructure = () => {
+  //   const { countriesCodesArray } = this.state;
+  //   let obj = {};
+  //   //{CN: 5, MX: 5, TX: 5}
+  //   countriesCodesArray.forEach(countryCode => (obj[countryCode] = 5));
+  //   this.setState({
+  //     data: obj
+  //   });
+  // };
 
   render() {
-    const { countriesNamesArray, data, color } = this.state;
+    // const { countriesNamesArray, data, color } = this.state;
     // console.log(data)
     return (
       <div>
         <VectorMap
-          map={ worldMill }
-          backgroundColor="transparent" // change it to ocean blue: #0077be
+          map={ worldMerc }
+          backgroundColor="transparent"
           zoomOnScroll={true}
           style={{
             width: "100%",
             height: "520px",
             fill: "#e4e4e4"
           }}
-          onRegionClick={this.handleClick} // gets the country code
+          onRegionSelected={this.handleRegion}
           className="map"
           regionStyle={{
             initial: {
@@ -102,15 +106,15 @@ class Map extends React.Component {
             selectedHover: {}
           }}
           regionsSelectable={true}
-          series={{
-            regions: [
-              {
-                values: data, // this is the map data
-                scale: ["#e4e4e4", color], // your color game's here
-                normalizeFunction: "polynomial"
-              }
-            ]
-          }}
+          // series={{
+          //   regions: [
+          //     {
+          //       values: data, // this is the map data
+          //       scale: ["#e4e4e4", color], // your color game's here
+          //       normalizeFunction: "polynomial"
+          //     }
+          //   ]
+          // }}
         />
         <Container>
           {/* {titleSet ? (
