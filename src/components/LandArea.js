@@ -32,7 +32,7 @@
 
     return (
     <div className="LandArea">
-        <AnimatedCircularProgress valueEnd={valueEnd} />
+        <AnimatedCircularProgress valueEnd={valueEnd} post_text={"%"} decimal={1}/>
     </div>   
     )
   }

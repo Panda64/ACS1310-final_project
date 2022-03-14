@@ -6,7 +6,7 @@ import {
   import AnimatedProgressProvider from "./AnimatedProgressProvider";
   import "react-circular-progressbar/dist/styles.css";
 
-function AnimatedCircularProgress({valueEnd, width=200}) {
+function AnimatedCircularProgress({valueEnd, width=200, pre_text='', post_text='', decimal=0}) {
     return (
         <div className="AnimatedCircularProgress" style={{ width: width, height: width }}>
         <AnimatedProgressProvider
@@ -17,11 +17,11 @@ function AnimatedCircularProgress({valueEnd, width=200}) {
         repeat={false}
         >
         {value => {
-            const roundedValue = Math.round(value);
+            // const roundedValue = Math.round(value);
             return (
             <CircularProgressbar
                 value={value}
-                text={`${roundedValue}%`}
+                text={`${pre_text}${value.toFixed(decimal)}${post_text}`}
                 styles={buildStyles({ 
                 pathTransition: "none", 
                 })}
