@@ -4,6 +4,7 @@ import './App.css';
 import Title from './components/Title';
 import Map from './components/Map';
 import Stats from './components/Stats';
+import ScreenShot from './components/ScreenShot';
 import { useState } from 'react';
 
 function App() {
@@ -17,12 +18,14 @@ function App() {
   return (
     <>
     {location.state ? 
-      <div>
+      <div className="App">
+        <ScreenShot>
         <Title name={location.state.name} />
         <div className="map_and_stats">
           <Map updateCountries={updateCountries} />
           <Stats mapState={mapState} />
         </div>
+        </ScreenShot>
         <Outlet />
       </div>
       : 
