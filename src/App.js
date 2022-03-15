@@ -8,10 +8,10 @@ import { useState } from 'react';
 
 function App() {
   const location = useLocation()
-  var [mapState, setMapState] = useState({ countriesArray : [], countryCode : '', isSelected : false })
+  var [mapState, setMapState] = useState({ countriesArray : [], countryCode : '', isSelected : false, countryName : '' })
 
-  function updateCountries(countriesArray, countryCode, isSelected) {
-    setMapState({ countriesArray, countryCode, isSelected })
+  function updateCountries(countriesArray, countryCode, isSelected, countryName) {
+    setMapState({ countriesArray, countryCode, isSelected, countryName })
   }
 
   return (

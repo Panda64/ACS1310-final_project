@@ -48,7 +48,7 @@ class Map extends React.Component {
   // };
 
   handleRegion = (e, code, isSelected, selectedRegions) => {
-    this.props.updateCountries(selectedRegions, code, isSelected);
+    this.props.updateCountries(selectedRegions, code, isSelected, getName(code));
   }
 
   // getCountriesNamesList = () => {
