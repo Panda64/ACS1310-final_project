@@ -83,7 +83,7 @@ class Map extends React.Component {
           zoomOnScroll={true}
           style={{
             width: "100%",
-            height: "520px",
+            height: "400px",
             fill: "#e4e4e4"
           }}
           onRegionSelected={this.handleRegion}
