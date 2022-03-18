@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import html2canvas from "html2canvas";
+import "./ScreenShot.css"
 
 export default class ScreenCapture extends Component {
   ref = React.createRef();
@@ -42,13 +43,13 @@ export default class ScreenCapture extends Component {
 
     return (
       <div>
-        <button onClick={this.handleClickTakeScreenShot}>Download</button>
         <div
           id="#screenshot"
           // style={{ position: "relative", left: "-1000px" }}
           ref={this.ref}
         >
         {children}
+        <button className="Save" onClick={this.handleClickTakeScreenShot}>Save as PNG</button>    
         </div>
       </div>
     );

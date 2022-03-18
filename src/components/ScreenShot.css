@@ -1,0 +1,25 @@
+.Save {
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #000000;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    color:#000000;
+    text-align:center;
+    transition: all 0.2s;
+    background-color: #FFFFFF;
+}
+
+.Save:hover {
+    color:#ffffff;
+    background-color:#000000;
+}
+
+@media all and (max-width:30em) {
+    .Save {
+        display:block;
+        margin:0.4em auto;
+    }
+}

@@ -9,8 +9,14 @@ import MinMax from './MinMax';
 function Stats({ mapState }) {
   return (
     <div className="Stats">
-      <LandArea mapState={mapState} country_data={country_data} />
-      <TotalCountries mapState={mapState} />
+      <div className="Land">
+        <p>🌍 Land Covered:</p>
+        <LandArea mapState={mapState} country_data={country_data} />
+      </div>
+      <div className="Total">
+        <p>📍 Total Countries:</p>
+        <TotalCountries mapState={mapState} />
+      </div>
       <MinMax mapState={mapState} country_data={country_data} country_comp={gdp_data} comp_index={"unGDP"} min_max={1} text={"💸 📈Highest GDP:"}/>
       <MinMax mapState={mapState} country_data={country_data} country_comp={gdp_data} comp_index={"unGDP"} min_max={0} text={"💸📉 Lowest GDP:"}/>
       <MinMax mapState={mapState} country_data={country_data} country_comp={pop_data} comp_index={"population"} min_max={1} text={"🌆 Highest Population:"}/>

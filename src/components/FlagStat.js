@@ -3,7 +3,7 @@ import AnimatedProgressProvider from './AnimatedProgressProvider';
 import ReactTextTransition, { presets } from "react-text-transition";
 import './FlagStat.css'
   
-function FlagStat ({ valueEnd, heading_text, country_flag}) {
+function FlagStat ({ valueEnd, heading_text, country_flag, country_name}) {
     return (
         <div className="FlagStat">
             <h1 className="flag_heading">{heading_text}</h1>
@@ -16,6 +16,7 @@ function FlagStat ({ valueEnd, heading_text, country_flag}) {
                 overflow
                 />
             </p>
+            <p className="name">{country_name}</p>
 
             <AnimatedProgressProvider
             valueStart={0}

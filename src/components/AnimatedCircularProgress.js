@@ -18,14 +18,15 @@ function AnimatedCircularProgress({valueEnd, width=125, pre_text='', post_text='
       repeat={false}
       >
       {value => {
-          // const roundedValue = Math.round(value);
           return (
           <CircularProgressbar
               value={value}
               maxValue={maxValue}
               text={`${pre_text}${value.toFixed(decimal)}${post_text}`}
               styles={buildStyles({ 
-              pathTransition: "none", 
+              pathTransition: "none",
+              pathColor: "#00A300",
+              textColor: "#00A300"
               })}
           />
           );
