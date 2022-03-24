@@ -31,4 +31,4 @@ Ever wanted to track all of the places you've ever travelled to? My travel track
 
 My travel tracker is currently live [here](https://jayjay.me/travel_tracker/).
 
-**NOTE:** Due to naming conventions, there is a chance that clicking on some countires will result in the page crashing. I am currently working to elimate all instances of this, but if you run into this issue, feel free to open an issue and I will get it fixed promptly!
+**NOTE:** Due to naming conventions, there is a chance that clicking on some countires will result in the page crashing. I am currently working to elimate all instances of this, but if you run into this issue, feel free to open an issue and I will get it fixed promptly.
