@@ -29,4 +29,4 @@ Ever wanted to track all of the places you've ever travelled to? My travel track
 
 ## Usage
 
-My travel tracker is currently live [here](https://jayjay.me/ACS1320-final_project/).
+My travel tracker is currently live [here](https://jayjay.me/travel_tracker/).
