@@ -1,4 +1,4 @@
-// More time effecient solution could be written for determining min and max targets
+// TODO: More time effecient solution could be written for determining min and max targets
 
 import { useState, useRef } from 'react'
 import FlagStat from "./FlagStat";

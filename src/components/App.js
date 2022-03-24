@@ -1,10 +1,10 @@
 import { Outlet, useLocation, Navigate } from 'react-router-dom'
 
 import './App.css';
-import Title from './components/Title';
-import Map from './components/Map';
-import Stats from './components/Stats';
-import ScreenShot from './components/ScreenShot';
+import Title from './Title';
+import Map from './Map';
+import Stats from './Stats';
+import ScreenShot from './ScreenShot';
 import { useState } from 'react';
 
 function App() {

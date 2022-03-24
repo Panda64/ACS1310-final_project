@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './components/App';
 import Name from './components/Name';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom'

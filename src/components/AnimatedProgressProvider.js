@@ -1,3 +1,5 @@
+// Adapted from https://codesandbox.io/s/vymm4oln6y?file=/AnimatedProgressProvider.js
+
 import React from "react";
 import { Animate } from "react-move";
 

@@ -1,3 +1,5 @@
+// Adapted from https://codesandbox.io/s/react-download-screenshot-qmk4g?from-embed=&file=/src/ScreenCapture.js
+
 import React, { Component } from "react";
 import html2canvas from "html2canvas";
 import "./ScreenShot.css"

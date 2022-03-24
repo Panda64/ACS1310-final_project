@@ -1,21 +1,32 @@
 # Travel Tracker
 
-This is an alpha build of a react app that allows users to track the places they have travelled to.
+Ever wanted to track all of the places you've ever travelled to? My travel tracker will do just that! To get started, simply enter your name and then click on each country you have visited. You will then see various stats about the places you have been! To save your travel profile, click on the "Save as PNG" button at the bottom of the page (make sure your browser window is maximized first).
+
+![first_image](/public/screenshot1.png)
+![second_image](/public/screenshot2.png)
 
 ## Current Functionality
 
 - Users can enter their name to create their custom travel tracker
 - Users can navigate around a world map to select the countries they have been to
-- Upon a country being selected, the region will then turn green, indicating that the user has visited that country.
+- Various stats will display about the visited countries
+- Users can save their travel profile as a PNG
 
 ## Future Functionality
 
-There is a large amount on the table for what I want to do with this project in the near future, but here are some of the main ideas I have in mind:
-
-- Detailed statistics on the countries visited (see [live deployment](https://jayjay.me/ACS1320-final_project/) for planned statistics)
-- Ability to save travel profile as a PDF
+- More statistics
 - Seperate USA map for a USA specific travel profile
+- Use web scraping and/or API's to get realtime country data
+
+## Libraries/Resources Used
+
+- [React](https://reactjs.org/)
+- [jvectormap](https://github.com/kadoshms/react-jvectormap) - Used to make the interactive map
+- [react-circular-progressbar](https://github.com/kevinsqi/react-circular-progressbar) - Used to make the statistical progress bars
+- [Country GDP's](https://worldpopulationreview.com/countries/countries-by-gdp) - Source for GDP data on each country
+- [General Country Data](https://raw.githubusercontent.com/mledoze/countries/master/countries.json) - Source for country flag and land area data
+- [Country Population](https://github.com/samayo/country-json/blob/master/src/country-by-population.json) - Source for country population data
 
 ## Usage
 
-Although still in early stages, you can check out the site [here](https://jayjay.me/ACS1320-final_project/).
+My travel tracker is currently live [here](https://jayjay.me/ACS1320-final_project/).
